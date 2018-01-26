@@ -84,6 +84,8 @@
 
 
 
+  <link rel="alternate" href="/atom.xml" title="inhere" type="application/atom+xml" />
+
 
 
 
@@ -103,7 +105,7 @@
 <meta property="og:description" content="前言新年伊始，计划学点新的东西，为了督促这份学习，以及加深日渐脆弱的记忆力，想到搭建一个博客来记录所学所想。同时，也顺手记下对生活的所感所愿，如同小时候的日记本，以便良日久远之后怀念起来也有所依凭。 早前注册了github，并不常用，且荒废了小一年。于是，不如在此之上搭个博客好了。google了两篇教程，亦步亦趋，捣腾半天总算告竣。过程很简单，只是不熟练，也接连遇到了几个小问题，各种搜索之后，解">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://7xifb5.com1.z0.glb.clouddn.com/wustrive-hexogit%E7%9F%A5%E8%AF%86%E7%BB%93%E6%9E%84.png">
-<meta property="og:updated_time" content="2018-01-26T06:54:00.418Z">
+<meta property="og:updated_time" content="2018-01-26T07:05:45.736Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="在github上新建一个博客！">
 <meta name="twitter:description" content="前言新年伊始，计划学点新的东西，为了督促这份学习，以及加深日渐脆弱的记忆力，想到搭建一个博客来记录所学所想。同时，也顺手记下对生活的所感所愿，如同小时候的日记本，以便良日久远之后怀念起来也有所依凭。 早前注册了github，并不常用，且荒废了小一年。于是，不如在此之上搭个博客好了。google了两篇教程，亦步亦趋，捣腾半天总算告竣。过程很简单，只是不熟练，也接连遇到了几个小问题，各种搜索之后，解">
@@ -396,15 +398,16 @@
 <blockquote>
 <ul>
 <li>使用npm安装Hexo：<br><code>$ npm install -g hexo-cli</code><br>初始化hexo：<br><code>$ hexo init [folder]</code>//folder为放置hexo的文件夹名<br><code>$ cd [folder]</code><br><code>$ npm install</code><br>如果你提前建好了存放hexo的文件夹，也可以先cd到该文件夹再初始化：<br><code>$ hexo init</code><br><code>$ npm install</code><br>初始化之后，该文件夹之下生成的目录如下：<br><code>_config.yml、 package.json、scaffolds、source、themes</code><br>其中source下有个posts文件夹，用来存放博客文章，格式为.md。<br>themes里面存放主题。<br>——config.yml是全局配置文件，可在此更改博客名字、切换主题等。<br>另外，主题里面还有一个config.yml文件，可对主题本身进行设置。<br>初始化完成之后，可以执行命令：<br><code>$ hexo generate</code><br><code>$ hexo server</code><br>然后在浏览器中输入<code>localhost：4000</code>进行本地预览。预览结束之后，使用键盘快捷键：<code>control + c</code>退出预览。</li>
-<li>把下载的hexo部署到github<br>首先需要安装一个插件：<br><code>$ npm install hexo-deployer-git --save</code><br>然后打开根目录下的_config.yml，搜索定位到以下代码：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># Deployerment</span><br><span class="line">## Docs:https://hexo.io/docs/deployment.html</span><br><span class="line">deploy:</span><br><span class="line">type:</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</blockquote>
+<li><p>把下载的hexo部署到github<br>首先需要安装一个插件：<br><code>$ npm install hexo-deployer-git --save</code><br>然后打开根目录下的_config.yml，搜索定位到以下代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># Deployerment</span><br><span class="line">## Docs:https://hexo.io/docs/deployment.html</span><br><span class="line">deploy:</span><br><span class="line">type:</span><br></pre></td></tr></table></figure>
 <p>修改成：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">type: git</span><br><span class="line">repo: git@github.com:username/username.github.io.git</span><br><span class="line">branch: master</span><br></pre></td></tr></table></figure>
 <p>其中的 <strong>username</strong> 是你的github用户名<br>然后执行下列命令，升级并发布即可：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 <p>此命令也可以简化成<code>$ hexo d -g</code>。<br>至此，hexob博客搭建完成。接下来需要进行简单的测试和美化。</p>
+</li>
+</ul>
+</blockquote>
 </li>
 </ol>
 <h4 id="文章发布和主题设置"><a href="#文章发布和主题设置" class="headerlink" title="文章发布和主题设置"></a>文章发布和主题设置</h4><ol>
@@ -567,6 +570,13 @@
 
         </nav>
 
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
         
 
         <div class="links-of-author motion-element">

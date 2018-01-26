@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>inhere</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://2flowers.cn/"/>
+  <updated>2018-01-26T07:05:45.736Z</updated>
+  <id>http://2flowers.cn/</id>
+  
+  <author>
+    <name>zizhou</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>在github上新建一个博客！</title>
+    <link href="http://2flowers.cn/2018/01/25/creatblog/"/>
+    <id>http://2flowers.cn/2018/01/25/creatblog/</id>
+    <published>2018-01-25T08:09:04.000Z</published>
+    <updated>2018-01-26T07:05:45.736Z</updated>
+    
+    <content type="html"><![CDATA[<!--用#标识符定义标题，#号数量越多标题越小--><h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>新年伊始，计划学点新的东西，为了督促这份学习，以及加深日渐脆弱的记忆力，想到搭建一个博客来记录所学所想。同时，也顺手记下对生活的所感所愿，如同小时候的日记本，以便良日久远之后怀念起来也有所依凭。</p><p>早前注册了github，并不常用，且荒废了小一年。于是，不如在此之上搭个博客好了。google了两篇教程，亦步亦趋，捣腾半天总算告竣。过程很简单，只是不熟练，也接连遇到了几个小问题，各种搜索之后，解决方法也一并写在了后面。</p><p>特别感谢下面两位博主，他们的教程对我助益良多：<br><!--链接的插入方法：用[]输入链接名，后面紧跟()输入链接地址--><br><a href="http://ccc013.github.io/2016/01/20/hexo+github%20%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E6%80%BB%E7%BB%93/" target="_blank" rel="noopener">Cai’s blog</a><br><a href="http://blog.haoji.me/build-blog-website-by-hexo-github.html" target="_blank" rel="noopener">小茗同学的博客</a></p><p>话不多说，开始搭建！<br><a id="more"></a></p><h4 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h4><p>毫无疑问，首先你要注册个github账户，最好对git有一些基础的了解——不了解也没关系，按着教程一步一步的来，新手小白也能完成。切记勿躁，出现错误就再自信看一遍教程，实在不行还有谷爹和度娘呢。</p><p>此外，你还需要：</p><ul><li><em>已经安装node.js、npm，可以使用命令行进行一些简单的操作（暂时不会也没关系）</em></li></ul><ul><li><em>已经安装好git客户端，mac或windows都有</em></li></ul><p>这两个的安装方法都很简单，跟着搜索的教程一路操作就行。</p><h4 id="开始搭建"><a href="#开始搭建" class="headerlink" title="开始搭建"></a>开始搭建</h4><ol><li><h5 id="新建仓库"><a href="#新建仓库" class="headerlink" title="新建仓库"></a>新建仓库</h5><p>登陆github，新建一个仓库（Repositpry），仓库名字必须是 <strong>username.github.io</strong> ，其中 <strong>username</strong> 是github的注册用户名，不是昵称。展示方式选择 <strong>public</strong> ，然后点击创建就ok了。仓库可能不会马上生效，稍等几分钟刷新就好。</p><p>建好的仓库就是以后存放博客网页等代码的地方。</p></li><li><h5 id="配置SSH-key"><a href="#配置SSH-key" class="headerlink" title="配置SSH key"></a>配置SSH key</h5><p>如果你的电脑之前没有用过git，需要在本机生成一个SSH key，然后在github的个人设置里新建一个SSH key，把密钥复制粘贴进去。这样子才能通过git把本地代码提交给github的服务器。你可以把它理解成ftp，只不过在本机和服务器之间修建了一条秘密通道，不用再一遍遍的输入用户名和密码。</p><p>如何新建一个SSH key：</p><blockquote><ul><li>打开终端（mac平台，windows平台用命令提示符），输入：<br>$ ssh-keygen -t rsa -C “your_email@example.com”<br>最后的邮箱是 <strong>注册github账号的邮箱地址</strong>。<br>然后无脑按3次回车，会在用户目录下生成一个id_rsa.pub文件。它一般在Users/username/.ssh的文件夹里面。</li><li>用记事本或任何编辑软件打开刚才生成的id_rsa.pub文件，全选复制。然后打开github的个人设置页-&gt;SSH and GPG keys -&gt; New SSH key,把内容粘贴在Key下面的内容框内，上面的title随便填，保存即可。</li><li>在终端输入：$ssh -T git@github.com<br>出现<table><tr><td>Are you sure you want to continue connecting(yes/no)?</td></tr></table>输入yes，回车。如果出现下面的信息：<br><table><tr><td background="orange">You’re successfully authenticated,but Github does not provide shell access.</td></tr></table><br>说明SSH配置成功！</li></ul></blockquote></li><li><h5 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h5><p>以下的操作全部在终端完成：</p><blockquote><ul><li>使用npm安装Hexo：<br><code>$ npm install -g hexo-cli</code><br>初始化hexo：<br><code>$ hexo init [folder]</code>//folder为放置hexo的文件夹名<br><code>$ cd [folder]</code><br><code>$ npm install</code><br>如果你提前建好了存放hexo的文件夹，也可以先cd到该文件夹再初始化：<br><code>$ hexo init</code><br><code>$ npm install</code><br>初始化之后，该文件夹之下生成的目录如下：<br><code>_config.yml、 package.json、scaffolds、source、themes</code><br>其中source下有个posts文件夹，用来存放博客文章，格式为.md。<br>themes里面存放主题。<br>——config.yml是全局配置文件，可在此更改博客名字、切换主题等。<br>另外，主题里面还有一个config.yml文件，可对主题本身进行设置。<br>初始化完成之后，可以执行命令：<br><code>$ hexo generate</code><br><code>$ hexo server</code><br>然后在浏览器中输入<code>localhost：4000</code>进行本地预览。预览结束之后，使用键盘快捷键：<code>control + c</code>退出预览。</li><li><p>把下载的hexo部署到github<br>首先需要安装一个插件：<br><code>$ npm install hexo-deployer-git --save</code><br>然后打开根目录下的_config.yml，搜索定位到以下代码：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># Deployerment</span><br><span class="line">## Docs:https://hexo.io/docs/deployment.html</span><br><span class="line">deploy:</span><br><span class="line">type:</span><br></pre></td></tr></table></figure><p>修改成：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">type: git</span><br><span class="line">repo: git@github.com:username/username.github.io.git</span><br><span class="line">branch: master</span><br></pre></td></tr></table></figure><p>其中的 <strong>username</strong> 是你的github用户名<br>然后执行下列命令，升级并发布即可：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>此命令也可以简化成<code>$ hexo d -g</code>。<br>至此，hexob博客搭建完成。接下来需要进行简单的测试和美化。</p></li></ul></blockquote></li></ol><h4 id="文章发布和主题设置"><a href="#文章发布和主题设置" class="headerlink" title="文章发布和主题设置"></a>文章发布和主题设置</h4><ol><li><h5 id="文章发布和修改"><a href="#文章发布和修改" class="headerlink" title="文章发布和修改"></a>文章发布和修改</h5><ul><li>使用命令行新建文章：<br><code>$ hexo new “新建的文章名字”</code><br>之后，本地硬盘hexo所在的文件夹/source/posts里面就会出现一个以文章名字命名的md文件。打开即可编写文章（不推荐用记事本编辑）。<br>也可以选择在本地直接新建.md文件。</li><li>文章写完之后，再次通过<code>$ hexo d -g</code>命令生成并部署到github上面。</li></ul></li><li><h5 id="主题更换和修改"><a href="#主题更换和修改" class="headerlink" title="主题更换和修改"></a>主题更换和修改</h5><p>Hexo安装之后默认使用的主题是landscape，我们可以更换成自己喜欢的主题。只需要把下载好的主题放在themes文件夹里，然后修改全局配置文件_config.yml中对应的主题名，重新执行<code>hexo d</code>即可。<br>我正在使用的主题是next，可以通过git直接clone到本地：<br><code>$ git clone http://github.com/iissnan/hexo-theme-next themes/next</code><br>主题切换成功之后，通过修改主题目录下的config.yml文件可以进行个性化设置，详情可参考这个博客：<a href="http://theme-next.iissnan.com/" target="_blank" rel="noopener">NexT使用文档</a></p></li></ol><h4 id="一些小问题"><a href="#一些小问题" class="headerlink" title="一些小问题"></a>一些小问题</h4><ol><li><h5 id="域名绑定"><a href="#域名绑定" class="headerlink" title="域名绑定"></a>域名绑定</h5><p>搭建在github上的博客，可以直接通过userna.github.io进行访问。如果想绑定别的域名，按照下面的步骤设置即可：</p><ul><li>登陆域名服务器，把域名解析到username.github.io。同时，通过ping命令获取username.github.io的ip地址，新建A绑定域名到该IP。</li><li>在存放hexo的根目录之下的source文件夹里面新建一个CNAME文档，无后缀名，填入你要绑定的个人域名。</li><li>提交<code>$ hexo d -g</code>命令，即绑定成功。</li></ul></li><li><h5 id="分类页和标签页"><a href="#分类页和标签页" class="headerlink" title="分类页和标签页"></a>分类页和标签页</h5><ul><li>分别先建一个分类和标签页面，命令如下：<br><code>$ hexo new page &quot;分类或标签名&quot;</code></li><li>然后在文章页面的顶部修改对应的类型，即可添加标签或分类。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">title: 在github上新建一个博客！</span><br><span class="line">date: 2018-01-25 16:09:04</span><br><span class="line">tags: [blogs,github,hexo]</span><br><span class="line">categories: 博客</span><br></pre></td></tr></table></figure></li></ul></li><li><h5 id="git的知识结构图"><a href="#git的知识结构图" class="headerlink" title="git的知识结构图"></a>git的知识结构图</h5><p><img src="http://7xifb5.com1.z0.glb.clouddn.com/wustrive-hexogit%E7%9F%A5%E8%AF%86%E7%BB%93%E6%9E%84.png" alt="git知识结构"></p><p>至此，博客搭建完成。<br>以后发现问题，也会随时更新。<br>春节之前，又下了一场不大不小的雪。此刻，天空灰蒙，白茫茫的大地之上一团和静。</p></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      &lt;!--用#标识符定义标题，#号数量越多标题越小--&gt;
+&lt;h4 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h4&gt;&lt;p&gt;新年伊始，计划学点新的东西，为了督促这份学习，以及加深日渐脆弱的记忆力，想到搭建一个博客来记录所学所想。同时，也顺手记下对生活的所感所愿，如同小时候的日记本，以便良日久远之后怀念起来也有所依凭。&lt;/p&gt;
+&lt;p&gt;早前注册了github，并不常用，且荒废了小一年。于是，不如在此之上搭个博客好了。google了两篇教程，亦步亦趋，捣腾半天总算告竣。过程很简单，只是不熟练，也接连遇到了几个小问题，各种搜索之后，解决方法也一并写在了后面。&lt;/p&gt;
+&lt;p&gt;特别感谢下面两位博主，他们的教程对我助益良多：&lt;br&gt;&lt;!--链接的插入方法：用[]输入链接名，后面紧跟()输入链接地址--&gt;&lt;br&gt;&lt;a href=&quot;http://ccc013.github.io/2016/01/20/hexo+github%20%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E6%80%BB%E7%BB%93/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Cai’s blog&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;http://blog.haoji.me/build-blog-website-by-hexo-github.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;小茗同学的博客&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;话不多说，开始搭建！&lt;br&gt;
+    
+    </summary>
+    
+      <category term="博客" scheme="http://2flowers.cn/categories/%E5%8D%9A%E5%AE%A2/"/>
+    
+    
+      <category term="blogs" scheme="http://2flowers.cn/tags/blogs/"/>
+    
+      <category term="github" scheme="http://2flowers.cn/tags/github/"/>
+    
+      <category term="hexo" scheme="http://2flowers.cn/tags/hexo/"/>
+    
+  </entry>
+  
+</feed>
