@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>inhere</title>
   
-  
+  <subtitle>游少宅多</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://2flowers.cn/"/>
