@@ -77,11 +77,21 @@ plugins: hexo-generator-feed
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type: git
-  repo: git@github.com:zizhouyuyu/zizhouyuyu.github.io.git
+- type: git
+  repo:
+    github: git@github.com:zizhouyuyu/zizhouyuyu.github.io.git
+    coding: git@git.coding.net:flowbloom/flow.git
   branch: master
+- type: baidu_url_submitter
 # autoCreater sitemap
 sitemap:
  path: sitemap.xml
 baidusitemap:
  path: baidusitemap.xml
+
+#baidu_url_submit
+baidu_url_submit:
+  count: 5 ##提交最新的五个链接
+  host: www.2flowers.cn
+  token: YZJt6lyUgZK10pXe
+  path: baidu_urls.txt
