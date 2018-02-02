@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://2flowers.cn/"/>
-  <updated>2018-01-29T07:37:44.759Z</updated>
+  <updated>2018-02-02T02:06:07.642Z</updated>
   <id>http://2flowers.cn/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>给Hexo博客来一个简单的美容</title>
+    <link href="http://2flowers.cn/2018/02/01/editBlog/"/>
+    <id>http://2flowers.cn/2018/02/01/editBlog/</id>
+    <published>2018-02-01T01:47:10.000Z</published>
+    <updated>2018-02-02T02:06:07.642Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="依然废话先行"><a href="#依然废话先行" class="headerlink" title="依然废话先行"></a>依然废话先行</h4><p>博客搭建完成，甩出去给人瞧之前难免还要修饰一番，过于娇艳的装束委实不懂，稍微修修容抹个保湿霜，至少让人看上去不讨厌就够了。</p><p>上次已经提到下载Next主题替代了Hexo的默认主题，Next本身就是一个极简的面貌，深得一众懒癌程序员大人的厚爱。而极简带来的好处也是显而易见——不容易犯错啊。好比形容一个人的装束简单又干净，你可以说他清爽，这总不是贬义词。当然，你也可以说他穷。</p><p>Hexo的美化也可以归纳为三步走：<font style="color:red;">基本配置的修改、自带功能的开启、扩展插件的安装。</font>下面一一道来。<br><a id="more"></a></p><h4 id="基本配置的修改"><a href="#基本配置的修改" class="headerlink" title="基本配置的修改"></a>基本配置的修改</h4><p>安装了Next之后，Hexo文件夹下共有两个_config.yml文件：<br><div class="note primary"><ul><li>hexo根目录下面的： _ config.yml</li><li>themes文件夹下的：next/_ config.yml</li></ul></div></p><h5 id="全局信息修改"><a href="#全局信息修改" class="headerlink" title="全局信息修改"></a>全局信息修改</h5><p>其中第一个_config.yml是针对网页整体进行配置，第二个_config.yml是对主题进行修改配置。当你搭建好一个博客，第一步就会修改博客名字和作者，于是我们打开主目录之下的_config.yml,做了如下修改：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">title: inhere  //博客名字</span><br><span class="line">subtitle: 游少宅多 //博客副标题</span><br><span class="line">description: tomorrow is better //博客的立意或个人口号，比如为人民服务之类</span><br><span class="line">author: zizhou //博客作者</span><br><span class="line">language: zh-Hans  //修改博客显示语言</span><br></pre></td></tr></table></figure></p><p><strong> 由于hexo默认是英文，所以需要在语言修改成汉语，也即是<em>zh-hans</em>。</strong></p><p>下面的简单修改要在themes/next文件夹之下的_config.xml里进行：</p><h5 id="首先修改主题展现方式"><a href="#首先修改主题展现方式" class="headerlink" title="首先修改主题展现方式"></a>首先修改主题展现方式</h5><p>next主题自带了四种前端展现样式（打开_config.yml文件，ctrl+f或cammand+f搜索“Schemes”即可找到），分别是：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#scheme: Muse  //通栏页面，菜单栏居中，大气舒畅</span><br><span class="line">#scheme: Mist  //也是通栏页面，顶部菜单栏</span><br><span class="line">scheme: Pisces //750像素的页宽，菜单栏可设置在左右两边，清爽优雅，我的选择</span><br><span class="line">#scheme: Gemini //950像素的页宽，其它同上</span><br></pre></td></tr></table></figure></p><p> 主题形式的设置只需要把样式名称前的#去掉即可，以下在xml中的大部分设置方法也是如此。如果选择了Pisces或Gemini，还可以设置sidebar的position，居左或居右，二选一。</p><h5 id="设置博客头像"><a href="#设置博客头像" class="headerlink" title="设置博客头像"></a>设置博客头像</h5><p>博客头像默认在sidebar设置，同样搜索并定位到siderbar，设置avatar：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">avatar: /images/archer.jpg</span><br></pre></td></tr></table></figure></p><p> 推荐自定义图像放在themes下的images里。</p><h5 id="设置浏览器小图标"><a href="#设置浏览器小图标" class="headerlink" title="设置浏览器小图标"></a>设置浏览器小图标</h5><p>如果没有设置的话，浏览器顶部网页标题之前的图标是一张难看的白纸，实在有碍美观。修改也很简单，找到下面这行，添加图片即可。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">favicon: /images/favicon.ico</span><br></pre></td></tr></table></figure></p><p>ico是一种独特的图片格式，16X16的像素分辨率即可。至于如何寻找或制作，度娘会告诉你。</p><h4 id="自带功能的开启"><a href="#自带功能的开启" class="headerlink" title="自带功能的开启"></a>自带功能的开启</h4><p>Next主题本身内置Rss和社交账号快捷链接，只需在config文件里开启即可。</p><h5 id="设置社交账号"><a href="#设置社交账号" class="headerlink" title="设置社交账号"></a>设置社交账号</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">social:</span><br><span class="line">  GitHub: https://github.com/zizhouyuyu</span><br><span class="line">  Twitter: https://twitter.com/zizhou</span><br></pre></td></tr></table></figure><p> 当然也可以添加facebook、微博等等账号，格式就是前面是社交平台的英文名，比如：weibo，后面是个人地址的链接。注意：冒号后面要加一个空格。接下来还要打开社交平台的小logo，Next已经内置了如下这些：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">social_icons:</span><br><span class="line">  enable: true</span><br><span class="line">  icons_only: false</span><br><span class="line">  transition: false</span><br><span class="line">  # Icon Mappings.</span><br><span class="line">  # KeyMapsToSocialItemKey: NameOfTheIconFromFontAwesome</span><br><span class="line">  GitHub: github</span><br><span class="line">  Twitter: twitter</span><br><span class="line">  FB Page: facebook</span><br><span class="line">  VK Group: vk</span><br><span class="line">  Skype: skype</span><br><span class="line">  YouTube: youtube</span><br><span class="line">  Instagram: instagram</span><br><span class="line">  StackOverflow: stack-overflow</span><br><span class="line">  Weibo: weibo</span><br></pre></td></tr></table></figure></p><p> 所有的图标都来自FontAwesome，可以自由寻找自个喜爱的添加在后面。</p><h5 id="开启Rss"><a href="#开启Rss" class="headerlink" title="开启Rss"></a>开启Rss</h5><div class="note primary"><ol><li>打开终端，输入命令行：<br><strong> npm install hexo-generator-feed –save </strong></li><li>在主题下的config.yml文件中开启Rss功能：<br><strong> rss: /atom.xml </strong></li></ol></div><p>Rss作为最成功的信息聚合格式，虽然已经被各大新闻app所取代，但是在某个小型圈子里依然是大家最快获取关注信息的方式。此处习惯性开启。</p><h5 id="版权信息的关闭和字体修改"><a href="#版权信息的关闭和字体修改" class="headerlink" title="版权信息的关闭和字体修改"></a>版权信息的关闭和字体修改</h5><p>Next主题默认在首页的页脚显示Hexo和Next的版权信息，基于对它们无私的分享精神之致敬，没啥乱七八糟的爱好不推荐修改。<br>字体修改在下面这一行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">font:</span><br><span class="line"> global:</span><br><span class="line">  external: true</span><br><span class="line">  family: Lato  //此处修改全局字体，单独设定的话可以在下面的子项中完成</span><br></pre></td></tr></table></figure></p><h4 id="扩展插件的安装"><a href="#扩展插件的安装" class="headerlink" title="扩展插件的安装"></a>扩展插件的安装</h4><p>Hexo的插件挺多的，上面的Rss其实也算是一个插件。除此之外，目前我还用到了两个：字数统计和评论管理系统。</p><h5 id="字数统计插件"><a href="#字数统计插件" class="headerlink" title="字数统计插件"></a>字数统计插件</h5><ul><li><p>打开终端，进入hexo根目录，使用命令行安装word_count插件：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-wordcount --save</span><br></pre></td></tr></table></figure></li><li><p>在主题配置文件config.yml里打开 <strong>wordcount</strong> 功能：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">post_wordcount:</span><br><span class="line">  item_text: true</span><br><span class="line">  wordcount: true  //此处默认为flase</span><br><span class="line">  min2read: false</span><br><span class="line">  separated_meta: true</span><br></pre></td></tr></table></figure></li></ul><h5 id="评论系统插件"><a href="#评论系统插件" class="headerlink" title="评论系统插件"></a>评论系统插件</h5><p>Next主题本身就支持多款评论系统，著名的DISQUS不必说，连畅言和多说也包含在内。曾经还支持网易云跟帖，直到它被猪场抛弃。<br>我用的是韩国的一个产品<font style="color:red;">|要做一个有品有味抵制韩货的人！|</font>，之所以使用它，也没别的原因，单纯因为它的名字——<strong>来比力</strong>。安装方法也是一以贯之的两步走：</p><ul><li>点击进入<a href="https://livere.com/" target="_blank" rel="noopener">来比力</a>官网，注册账号并登陆，以此选择-&gt;<strong>管理页面</strong>-&gt;<strong>代码管理</strong>，复制代码框之中data-uid之后双引号之内的字母。</li><li>再次打开主题下的config.yml文件，搜索定位liverre_uid，把上面复制的代码粘贴在：后面：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">livere_uid: THISnideDAIma==</span><br></pre></td></tr></table></figure></li></ul><h4 id="注意"><a href="#注意" class="headerlink" title="注意"></a><font style="color:red;">注意</font></h4><p>各种修改之后，不要忘了 <code>hexo d -g</code> 一下，然后刷新几遍博客就能看到效果了。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;依然废话先行&quot;&gt;&lt;a href=&quot;#依然废话先行&quot; class=&quot;headerlink&quot; title=&quot;依然废话先行&quot;&gt;&lt;/a&gt;依然废话先行&lt;/h4&gt;&lt;p&gt;博客搭建完成，甩出去给人瞧之前难免还要修饰一番，过于娇艳的装束委实不懂，稍微修修容抹个保湿霜，至少让人看上去不讨厌就够了。&lt;/p&gt;
+&lt;p&gt;上次已经提到下载Next主题替代了Hexo的默认主题，Next本身就是一个极简的面貌，深得一众懒癌程序员大人的厚爱。而极简带来的好处也是显而易见——不容易犯错啊。好比形容一个人的装束简单又干净，你可以说他清爽，这总不是贬义词。当然，你也可以说他穷。&lt;/p&gt;
+&lt;p&gt;Hexo的美化也可以归纳为三步走：&lt;font style=&quot;color:red;&quot;&gt;基本配置的修改、自带功能的开启、扩展插件的安装。&lt;/font&gt;下面一一道来。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="博客" scheme="http://2flowers.cn/categories/%E5%8D%9A%E5%AE%A2/"/>
+    
+    
+      <category term="hexo" scheme="http://2flowers.cn/tags/hexo/"/>
+    
+      <category term="blog" scheme="http://2flowers.cn/tags/blog/"/>
+    
+  </entry>
   
   <entry>
     <title>《网易考拉全站活动策划》笔记</title>
@@ -62,11 +88,11 @@
       <category term="博客" scheme="http://2flowers.cn/categories/%E5%8D%9A%E5%AE%A2/"/>
     
     
+      <category term="hexo" scheme="http://2flowers.cn/tags/hexo/"/>
+    
       <category term="blogs" scheme="http://2flowers.cn/tags/blogs/"/>
     
       <category term="github" scheme="http://2flowers.cn/tags/github/"/>
-    
-      <category term="hexo" scheme="http://2flowers.cn/tags/hexo/"/>
     
   </entry>
   

@@ -4,6 +4,28 @@
 
     
   <url>
+    <loc>http://2flowers.cn/2018/02/01/editBlog/</loc>
+    <lastmod>2018-02-02T02:06:07.642Z</lastmod>
+    <data>
+        <display>
+        <title>给Hexo博客来一个简单的美容</title>
+        <pubTime>2018-02-01T01:47:10.000Z</pubTime>
+        
+        <tag>hexo</tag>
+         
+        <tag>blog</tag>
+         
+         
+           
+             
+              <breadCrumb title="博客" url="http://2flowers.cn/categories/%E5%8D%9A%E5%AE%A2/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://2flowers.cn/2018/01/29/netClass01/</loc>
     <lastmod>2018-01-29T07:37:44.759Z</lastmod>
     <data>
@@ -31,11 +53,11 @@
         <title>在github上新建一个博客！</title>
         <pubTime>2018-01-25T08:09:04.000Z</pubTime>
         
+        <tag>hexo</tag>
+         
         <tag>blogs</tag>
          
         <tag>github</tag>
-         
-        <tag>hexo</tag>
          
          
            
