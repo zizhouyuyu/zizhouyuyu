@@ -88,11 +88,11 @@
       <category term="博客" scheme="http://2flowers.cn/categories/%E5%8D%9A%E5%AE%A2/"/>
     
     
-      <category term="hexo" scheme="http://2flowers.cn/tags/hexo/"/>
-    
       <category term="blogs" scheme="http://2flowers.cn/tags/blogs/"/>
     
       <category term="github" scheme="http://2flowers.cn/tags/github/"/>
+    
+      <category term="hexo" scheme="http://2flowers.cn/tags/hexo/"/>
     
   </entry>
   
