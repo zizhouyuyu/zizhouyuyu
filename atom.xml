@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://2flowers.cn/"/>
-  <updated>2018-02-02T02:06:07.642Z</updated>
+  <updated>2018-03-14T09:25:01.371Z</updated>
   <id>http://2flowers.cn/</id>
   
   <author>
@@ -15,6 +15,76 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>node.js的学习笔记/讲师blue</title>
+    <link href="http://2flowers.cn/2018/03/14/leanedCode/"/>
+    <id>http://2flowers.cn/2018/03/14/leanedCode/</id>
+    <published>2018-03-14T09:03:12.988Z</published>
+    <updated>2018-03-14T09:25:01.371Z</updated>
+    
+    <content type="html"><![CDATA[<h5 id="第一节：node-js的缘由"><a href="#第一节：node-js的缘由" class="headerlink" title="第一节：node.js的缘由"></a>第一节：node.js的缘由</h5><ul><li>node.js与js的关系/一个用于前端/一个用于后端</li><li>node.js的效率数十倍与PHP</li><li>node.js集成了众多模块，精简开发流程，提高开发效率<h5 id="第二节：认识node-js"><a href="#第二节：认识node-js" class="headerlink" title="第二节：认识node.js"></a>第二节：认识node.js</h5></li><li>http模块的简单使用</li><li>借用http模块搭建一个简单的service服务器</li><li>使用switch循环设定打开不同后缀文件显示不同内容</li><li>模块的调用使用require<br><strong>终端命令之下输入node进入环境，control+c启动退出</strong></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h5 id=&quot;第一节：node-js的缘由&quot;&gt;&lt;a href=&quot;#第一节：node-js的缘由&quot; class=&quot;headerlink&quot; title=&quot;第一节：node.js的缘由&quot;&gt;&lt;/a&gt;第一节：node.js的缘由&lt;/h5&gt;&lt;ul&gt;
+&lt;li&gt;node.js与js的关系/一个
+      
+    
+    </summary>
+    
+      <category term="博客" scheme="http://2flowers.cn/categories/%E5%8D%9A%E5%AE%A2/"/>
+    
+    
+      <category term="code" scheme="http://2flowers.cn/tags/code/"/>
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://2flowers.cn/2018/03/13/wxCodeTest/"/>
+    <id>http://2flowers.cn/2018/03/13/wxCodeTest/</id>
+    <published>2018-03-13T09:51:23.371Z</published>
+    <updated>2018-03-13T10:22:52.201Z</updated>
+    
+    <content type="html"><![CDATA[<p>MVVM:Model-view-viewMode的简写，将视图UI和业务逻辑分开。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;MVVM:Model-view-viewMode的简写，将视图UI和业务逻辑分开。&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>《深度解析高粘度UGC打造之道》笔记</title>
+    <link href="http://2flowers.cn/2018/02/09/netEasy02/"/>
+    <id>http://2flowers.cn/2018/02/09/netEasy02/</id>
+    <published>2018-02-09T01:14:03.000Z</published>
+    <updated>2018-02-09T01:24:27.452Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="博客" scheme="http://2flowers.cn/categories/%E5%8D%9A%E5%AE%A2/"/>
+    
+    
+      <category term="blog" scheme="http://2flowers.cn/tags/blog/"/>
+    
+      <category term="运营" scheme="http://2flowers.cn/tags/%E8%BF%90%E8%90%A5/"/>
+    
+      <category term="网易" scheme="http://2flowers.cn/tags/%E7%BD%91%E6%98%93/"/>
+    
+  </entry>
   
   <entry>
     <title>给Hexo博客来一个简单的美容</title>
